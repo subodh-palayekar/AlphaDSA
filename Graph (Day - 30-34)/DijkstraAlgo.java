@@ -92,7 +92,7 @@ public class DijkstraAlgo {
                     int v=e.dest;
                     int wt = e.wt;
     
-                    if(distance[u]+wt <distance[v]){   //update distance of src to v
+                    if(distance[u]+wt <distance[v]){   //update distance of src to v (instead of distance[u] you can use curr.path)
                         distance[v]=distance[u]+wt;
                         pq.add(new Point(v, distance[v]));
     
