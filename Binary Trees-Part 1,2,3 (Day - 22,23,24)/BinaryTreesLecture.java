@@ -141,7 +141,7 @@ public class BinaryTreesLecture{
             int leftHeight = treeHeight(root.left);
 
             int rightDiameter = diameter(root.right);
-            int rightHeight = diameter(root.right);
+            int rightHeight = treeHeight(root.right);
 
             int selfDiameter = leftHeight+rightHeight+1;
 
