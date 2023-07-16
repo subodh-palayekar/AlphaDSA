@@ -28,12 +28,12 @@ public class SlidingWindow {
             pq.add(new Point(arr[i], i));
         }
 
-        res[0]=pq.remove().data;
+        res[0]=pq.peek().data;
 
         for(int i=k;i<arr.length;i++){
             pq.add(new Point(arr[i],i));
 
-            while(pq.peek().idx>0 && pq.peek().idx <= (i-k)){
+            while(pq.peek().idx <= (i-k)){
                 pq.remove();
             }
 

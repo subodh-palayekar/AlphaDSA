@@ -307,10 +307,11 @@ public class BinTrees {
         int oldData = root.data;
         int left = transformSum(root.left);
         int right=transformSum(root.right);
+        
 
-        root.data=left+right;
+        root.data=left+right + root.left.data+root.right.data;
 
-        return left+right+oldData;
+        return oldData;
     }
 
     // level order traversal
