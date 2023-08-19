@@ -66,13 +66,13 @@ public class Graph2{
 
         for(int i=0;i<graph.length;i++){
             if(!visited[i]){
-                bsfUtil(graph,visited);
+                bfsUtil(graph,visited);
             }
         }
 
     }
 
-    public static void bsfUtil(ArrayList<Edge> graph[], boolean visited[]){
+    public static void bfsUtil(ArrayList<Edge> graph[], boolean visited[]){
         Queue<Integer> q = new LinkedList<>();
 
         q.add(0);
@@ -97,18 +97,18 @@ public class Graph2{
 
         for(int i=0;i<graph.length;i++){
             if(!visited[i]){
-                dsfUtil(graph,i,visited);
+                dfsUtil(graph,i,visited);
             }
         }
     }
 
-    public static void dsfUtil(ArrayList<Edge> graph[],int curr,boolean visited[]){
+    public static void dfsUtil(ArrayList<Edge> graph[],int curr,boolean visited[]){
         System.out.println(curr);
         visited[curr]=true;
         for(int i=0;i<graph[curr].size();i++){
             Edge e = graph[curr].get(i);
             if(!visited[i]){
-               dsfUtil(graph, e.dest, visited);
+               dfsUtil(graph, e.dest, visited);
             }
         }
     }

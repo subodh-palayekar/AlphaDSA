@@ -81,14 +81,14 @@ public class Graph{
 
     }
 
-    public static void dsf(ArrayList<Edge> graph[],int curr,boolean visited[]){
+    public static void dfs(ArrayList<Edge> graph[],int curr,boolean visited[]){
         System.out.print(curr+" ");
         visited[curr]=true;
 
         for(int i=0;i<graph[curr].size();i++){
             Edge e = graph[curr].get(i);
             if(!visited[e.dest]){
-                dsf(graph, e.dest, visited);
+                dfs(graph, e.dest, visited);
             }
         }
     }
@@ -111,7 +111,7 @@ public class Graph{
         buildGraph(graph);
         // bfs(graph);
 
-        dsf(graph, 0, new boolean[V]);
+        dfs(graph, 0, new boolean[V]);
 
        
 
