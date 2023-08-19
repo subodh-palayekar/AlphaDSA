@@ -310,10 +310,7 @@ public class LinkedList {
         // finding middle node
         Node slow=head;
         Node fast= head.next;
-        while(fast!=null && fast.next!=null){
-            if(slow==head){
-                break;
-            }
+        while(fast!=null && fast.next!=null)
             slow=slow.next;
             fast=fast.next.next;
         }

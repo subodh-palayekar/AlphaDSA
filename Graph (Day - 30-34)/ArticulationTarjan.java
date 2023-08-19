@@ -60,7 +60,7 @@ public class ArticulationTarjan {
 
         for(int i=0;i<graph[curr].size();i++){
             Edge e = graph[curr].get(i);
-            if(parent==curr){
+            if(parent==e.dest){
                 continue;
             }else if(!visited[e.dest]){
                 dfs(graph,dt, low, visited, e.dest, curr, time, ap);
